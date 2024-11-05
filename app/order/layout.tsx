@@ -1,6 +1,7 @@
 import React from "react";
 import OrderSidebar from "@/components/order/OrderSidebar";
 import OrderSummary from "@/components/order/OrderSummary";
+import ToastNotification from "@/components/ui/ToastNotification";
 
 const Layout = ({
   children,
@@ -16,6 +17,7 @@ const Layout = ({
         </main>
         <OrderSummary />
       </div>
+      <ToastNotification />
     </>
   );
 };
