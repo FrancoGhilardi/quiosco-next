@@ -1,4 +1,4 @@
-import { formatCurrency } from "@/src/utils";
+import { formatCurrency, getImagePath } from "@/src/utils";
 import { Product } from "@prisma/client";
 import Image from "next/image";
 import React from "react";
@@ -9,10 +9,11 @@ type ProductCardProps = {
 };
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const imagePath = getImagePath(product.image);
   return (
     <div className="border bg-white ">
       <Image
-        src={`/products/${product.image}.jpg`}
+        src={imagePath}
         alt={`Imagen Platillo ${product.name}`}
         width={800}
         height={500}
